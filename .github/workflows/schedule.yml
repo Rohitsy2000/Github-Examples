@@ -4,18 +4,31 @@ on:
         branches:
             - main
             - dev
-jobs:
+    pull_request:
+        branches:
+            - main        
+jobs:      
     first_job:
         runs-on: ubuntu-latest
         steps:
             - name: 'Git checkout'
-              uses: actions/checkout@v4 
-            - name: Welcome message
-              run: echo "my first Github action job"
+              uses: actions/checkout@v4
+            - name: 'Install Cowsay program'
+              run: sudo apt-get install cowsay -y
+            - name: Create directory (Cowsay) 
+              run: mkdir -p cowsay 
+            - name: Execute Cowsay CMD Tiger
+              working-directory: cowsay
+              run: cowsay -f Tiger 'Run for cover, I am a tiger' >> tiger.txt
+            - name: Execute Cowsay CMD Lion
+              working-directory: cowsay
+              run: cowsay -f Lion 'Run for cover, I am a Lion'  >> lion.txt
             - name : List files
+              working-directory: cowsay
               run: ls
-            - name: Readfile
-              run: cat README.md 
-            - name: dfgdfgdfgdfgd
-              run: echo 'sECOND Line'   
+            - name : Display Tiger and Lion
+              working-directory: cowsay
+              run: | 
+                cat tiger.txt
+                cat lion.txt      
             
