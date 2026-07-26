@@ -19,16 +19,16 @@ jobs:
               run: mkdir -p cowsay 
             - name: Execute Cowsay CMD Tiger
               working-directory: cowsay
-              run: cowsay -f Tiger 'Run for cover, I am a tiger' >> tiger.txt
+              run: cowsay -f dragon 'Run for cover, I am a dragon' >> dragon.txt
             - name: Execute Cowsay CMD Lion
               working-directory: cowsay
-              run: cowsay -f Lion 'Run for cover, I am a Lion'  >> lion.txt
+              run: cowsay -f tux 'Run for cover, I am a Tux'  >> tux.txt
             - name : List files
               working-directory: cowsay
               run: ls
             - name : Display Tiger and Lion
               working-directory: cowsay
               run: | 
-                cat tiger.txt
-                cat lion.txt      
+                cat dragon.txt
+                cat tux.txt      
             
