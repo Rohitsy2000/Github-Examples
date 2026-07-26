@@ -44,8 +44,8 @@ jobs:
               run: ls -R
             - name: 'Display both the files'
               run: |
-                  cat dragon.txt
-                  cat tux.txt  
+                  cat cowsay-dragon/dragon.txt
+                  cat cowsay-tux/tux.txt  
               
         
                 
