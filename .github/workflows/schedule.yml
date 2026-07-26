@@ -1,18 +1,16 @@
-name: 'Workflow1'
+name: 'my first workflow'
 on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-    branches:
-      - main              
+    push:
+        branches:
+            - main
 jobs:
-  JOBA:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Step-1'
-        run: echo 'Hello World from step-1'      
-              
-
-
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Welcome message
+              run: echo "my first Github action job"
+            - name : List files
+              run: ls
+            - name: Readfile
+              run: cat README.md  
+            
