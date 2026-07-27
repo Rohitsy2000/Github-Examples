@@ -6,13 +6,17 @@ on:
             - dev
     pull_request:
         branches:
-            - main        
+            - main
+env:
+    APPLICATION: docker                    
 jobs:      
     first_job:
         runs-on: ubuntu-latest
         steps:
             - name: 'Git checkout'
               uses: actions/checkout@v4
+            - name: 'Install Docker program'
+              run: sudo apt-get install ${{env.APPLICATION}} -y  
             - name: 'Install Cowsay program'
               run: sudo apt-get install cowsay -y
             - name: Create directory (Cowsay Dragon) 
