@@ -8,7 +8,7 @@ on:
         branches:
             - main
 env:
-    APPLICATION: docker                    
+    APPLICATION: docker.io                   
 jobs:      
     first_job:
         runs-on: ubuntu-latest
